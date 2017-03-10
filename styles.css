@@ -1,24 +1,25 @@
 button {
+  cursor: pointer;
+}
+
+.button {
   border-radius: 25px;
   border: 1px solid #212121;
   background-color: #fff;
   transition-duration: 0.3s;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  outline: none;
 }
 
-button:hover {
+.button:hover {
   background-color: #212121;
   color: #fff;
 }
 
-button:active {
+.button:active {
   background-color: #424242;
   color: #fff;
   box-shadow: 0 6px 12px rgba(0,0,0,0.16), 0 6px 12px rgba(0,0,0,0.23);
-}
-
-button:focus {
-  outline: none;
 }
 
 #orbit-nav-container {
@@ -41,8 +42,8 @@ button:focus {
   border-radius: 50%;
   width: 20vw;
   height: 20vw;
-  max-width: 125px;
-  max-height: 125px;
+  max-width: 95px;
+  max-height: 95px;
   display: flex;
   justify-content: center;
   text-decoration: none;
@@ -51,7 +52,6 @@ button:focus {
   padding: 10px;
   transition-duration: 0.3s;
   transition-timing-function: ease-out;
-  pointer-events: none;
 }
 
 .orbit-btn.out {
@@ -65,9 +65,12 @@ button:focus {
 #nav-close-btn {
   width: 15vw;
   height: 15vw;
-  max-width: 100px;
-  max-height: 100px;
+  max-width: 75px;
+  max-height: 75px;
   z-index: 1;
+  border: none;
+  outline: none;
+  transition-duration: 0.3s;
 }
 
 .hidden {

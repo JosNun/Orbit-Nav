@@ -32,7 +32,6 @@ let orbitnav = (function() {
       spinOut = options.spinOut;
 
       for (let btn of closeBtns) {
-        console.log(typeof btn);
         btn.addEventListener('click', function() {
           orbitnav.collapse();
         });
@@ -43,7 +42,6 @@ let orbitnav = (function() {
       setTimeout(function() {
         container.style.opacity = 1;
 
-
         for (let i = 0; i < navBtns.length; i++) {
           let degrees = (((2 / navBtns.length * i) + 1) *
             Math.PI) + (Math.PI / 2);
@@ -53,25 +51,23 @@ let orbitnav = (function() {
           navBtns[i].style.transform =
             'translate(' + transX + '%,' + transY + '%) ' +
             'scale(1)';
-            if (spinOut) {
-              navBtns[i].style.transform += ' rotate(0deg)';
-            }
-            navBtns[i].classList.add('out');
+          if (spinOut) {
+            navBtns[i].style.transform += ' rotate(0deg)';
+          }
+          navBtns[i].classList.add('out');
         }
       });
-
 
       isCollapsed = false;
     },
 
     collapse: function() {
+      let dur = parseFloat(window.getComputedStyle(closeBtns[0]).getPropertyValue('transition-duration')) * 1000;
       container.style.opacity = 0;
-
-      container.addEventListener('transitionend', function() {
-        if (container.style.opacity === '0') {
-          container.classList.add('hidden');
-        }
-      }, false);
+      
+      setTimeout(function() {
+        container.classList.add('hidden');
+      }, dur);
 
       for (let btn of navBtns) {
         btn.style.transform = 'translate(0,0) scale(0.5)';
@@ -80,13 +76,13 @@ let orbitnav = (function() {
         }
         btn.classList.remove('out');
       }
-
       isCollapsed = true;
     },
     toggle: function() {
       if (!isCollapsed) {
         this.collapse();
-      } else {
+      }
+      else {
         this.show();
       }
     },
