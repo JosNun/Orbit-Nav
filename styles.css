@@ -1,0 +1,75 @@
+button {
+  border-radius: 25px;
+  border: 1px solid #212121;
+  background-color: #fff;
+  transition-duration: 0.3s;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+button:hover {
+  background-color: #212121;
+  color: #fff;
+}
+
+button:active {
+  background-color: #424242;
+  color: #fff;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.16), 0 6px 12px rgba(0,0,0,0.23);
+}
+
+button:focus {
+  outline: none;
+}
+
+#orbit-nav-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 0.3s;
+  pointer-events: none;
+}
+
+.orbit-btn {
+  position: absolute;
+  align-items: center;
+  background-color: #ff9800;
+  border-radius: 50%;
+  width: 20vw;
+  height: 20vw;
+  max-width: 125px;
+  max-height: 125px;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  font-family: sans-serif;
+  padding: 10px;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+  pointer-events: none;
+}
+
+.orbit-btn.out {
+  pointer-events: all;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.orbit-btn.out:active {
+  box-shadow: 0 6px 12px rgba(0,0,0,0.16), 0 6px 12px rgba(0,0,0,0.23);
+}
+
+#nav-close-btn {
+  width: 15vw;
+  height: 15vw;
+  max-width: 100px;
+  max-height: 100px;
+  z-index: 1;
+}
+
+.hidden {
+  display: none !important;
+}
